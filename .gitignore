@@ -3,3 +3,6 @@ node_modules/
 
 # Ignore environment variables
 .env
+
+# Generated per-run output, usage, cost, and log artifacts
+/output/

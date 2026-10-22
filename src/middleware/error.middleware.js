@@ -5,6 +5,8 @@ export const errorHandler = (err, req, res, next) => {
     error: {
       message: err.message || "Internal Server Error",
       status: statusCode,
+      ...(err.runId ? { runId: err.runId } : {}),
+      ...(err.artifactDirectory ? { artifactDirectory: err.artifactDirectory } : {}),
     },
   });
 };

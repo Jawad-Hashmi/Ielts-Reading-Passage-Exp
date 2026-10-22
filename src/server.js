@@ -4,6 +4,7 @@ import cors from "cors";
 import morgan from "morgan";
 import { config } from "./config/env.js";
 import healthRoutes from "./routes/health.routes.js";
+import experimentRoutes from "./routes/experiment.routes.js";
 import { errorHandler } from "./middleware/error.middleware.js";
 
 const app = express();
@@ -18,6 +19,7 @@ app.use(morgan("dev"));
 
 // API Routes
 app.use("/api/v1", healthRoutes);
+app.use("/api/v1/experiments", experimentRoutes);
 
 // Global Error Handler
 app.use(errorHandler);
